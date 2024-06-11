@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+langchain_openai
+python-dotenv
+langchain_community
+neo4j
+selenium
+langchain
+boto3
+unstructured
+pymongo
+schedule
+unstructured[pdf]
+unstructured[docx]
+opencv-python-headless
