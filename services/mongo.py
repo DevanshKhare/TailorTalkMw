@@ -24,3 +24,12 @@ def get_file_from_queue():
     except Exception as e:
         return {"message": f"File retrieval from queue failed!{e}", "success": False}
 
+def remove_file_from_queue(file_name):
+    try:
+        client = pymongo.MongoClient("mongodb://root:root@ais-mongodb:27017")
+        db = client["ais"]
+        collection = db["scheduled_files"]
+        collection.delete_one({"file_name": file_name})
+        return {"message": "File removed from queue successfully!", "success": True}
+    except Exception as e:
+        return {"message": f"File removal from queue failed!{e}", "success": False}
